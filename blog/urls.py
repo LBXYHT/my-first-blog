@@ -7,4 +7,6 @@ urlpatterns = [
     ## <int:pk> means Django expects an integer value and will transfer it to a view a s a variable called pk
     ## / to finish the URL
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
+    path('post/new/', views.post_new, name='post_new'),
+    path('post/<int:pk>/edit', views.post_edit, name = 'post_edit'),
 ]
