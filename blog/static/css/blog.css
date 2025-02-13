@@ -100,9 +100,9 @@ p {
 
 .btn-secondary,
 .btn-secondary:visited {
-    color: #C25100;
+    color: #ff6a00;
     background: rgba(194, 81, 0, 0.1);
-    border: 2px solid #C25100;
+    border: 2px solid #ff6a00;
     padding: 0.6rem 1.8rem;
     border-radius: 25px; 
     transition: all 0.3s ease; 
@@ -110,7 +110,7 @@ p {
 
 .btn-secondary:hover {
     color: #fff;
-    background: #C25100;
+    background: #ff6a00;
     transform: translateY(-2px); 
     box-shadow: 0 4px 12px rgba(194, 81, 0, 0.2);
 }
