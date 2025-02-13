@@ -102,6 +102,7 @@ p {
 .btn-secondary:visited {
     color: #ff6a00;
     background: rgba(194, 81, 0, 0.1);
+    margin-left: -1rem;
     border: 2px solid #ff6a00;
     padding: 0.6rem 1.8rem;
     border-radius: 25px; 
@@ -166,7 +167,7 @@ p {
 
 .post > .actions {
     float: right;
-    margin: 2.5rem 0 1.5rem 75rem;
+    margin: 4.5rem 0 1.5rem 75rem;
     position: absolute;
     z-index: 1;
 }
@@ -187,7 +188,7 @@ p {
     right: -20px; 
     width: 80px;
     height: 80px;
-    opacity: 0.15; 
+    opacity: 0.715; 
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%234d66b6" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
     background-repeat: no-repeat;
     background-size: contain;
