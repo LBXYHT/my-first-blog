@@ -18,9 +18,12 @@
                         {% include './icons/file-earmark-plus.svg' %}
                     </a>
                 {% endif %}
-                <h1><a href="/">Django Girls Blog</a></h1>
+                <h1><a href="/">Viego's First Blog</a></h1>
             </div>
         </header>
+        <div class="bganimation">
+            <canvas class="particle-canvas"></canvas>
+        </div>
         <main class="container">
             <div class="row">
                 <div class="col">
@@ -29,5 +32,6 @@
                 </div>
             </div>
         </main>
+        <script src="{% static 'js/particles.js' %}"></script>
     </body>
 </html>

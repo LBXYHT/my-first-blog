@@ -1,81 +1,225 @@
 
 .page-header {
-    background-color: #4d66b6;
-    margin-top: 0;
-    margin-bottom: 40px;
-    padding: 20px 20px 20px 40px;
+    background: linear-gradient(135deg, #3a4f9e 0%, #a7b9f6 100%); 
+    margin: 0;
+    padding: 2rem 4rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
 }
 
 .page-header h1,
 .page-header h1 a,
 .page-header h1 a:visited,
 .page-header h1 a:active {
-    color: #ffffff;
-    font-size: 36pt;
-    text-decoration: none;
+    color: #fff;
+    font-size: 2.8rem;
+    font-family: 'SignPainter', 'Brush Script MT', cursive; 
+    letter-spacing: 1px; 
 }
 
-h1,
-h2,
-h3,
-h4 {
-    font-family: 'SignPainter', cursive;
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: #e2e2e2;
+    overflow-x: hidden;
+}
+
+.bganimation {
+    position: fixed;
+    top: 2rem;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 2rem);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.bganimation::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: linear-gradient(
+        45deg,
+        rgba(87, 213, 255, 0.08) 0%,
+        rgba(91, 127, 255, 0.1) 25%,
+        rgba(134, 134, 134, 0.08) 50%,
+        rgba(92, 111, 255, 0.1) 75%,
+        rgba(95, 250, 255, 0.08) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientFlow 5s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+h1, h2, h3, h4 {
+    font-family: 'SignPainter', 'Segoe Script', cursive;
+    color: #2c3e50; 
+    margin: 1.5rem 0;
 }
 
 p {
-    font-family: 'times';
-    background-color: #f6f6f6;
-    margin-top: 0;
-    margin-bottom: 40px;
-    border: 2px dashed #a8a8a8;
-    padding: 10px;
+    font-family: 'Georgia', 'Times New Roman', serif; 
+    line-height: 1.8; 
+    background: #fff;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-left: 4px solid #4d66b6; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
+    border-radius: 4px; 
 }
+
 
 .date {
-    color: #7700ff;
-    font-family: 'times';
+    color: #8e44ad; 
+    font-family: 'Helvetica', sans-serif;
+    font-size: 0.9rem;
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: #f8f9fa;
+    border-radius: 12px;
 }
 
-.save {
-    float: right;
-}
-
-.post-form textarea,
-.post-form input {
-    width: 100%;
-}
-
-.top-menu,
-.top-menu:hover,
-.top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 26pt;
-    margin-right: 20px;
-}
-
-.post {
-    margin-bottom: 70px;
-}
-
-.post h2 a,
-.post h2 a:visited {
-    color: #00f2ff;
-}
-
-.post > .date,
-.post > .actions {
-    float: right;
-}
 
 .btn-secondary,
 .btn-secondary:visited {
     color: #C25100;
-    background: none;
-    border-color: #C25100;
+    background: rgba(194, 81, 0, 0.1);
+    border: 2px solid #C25100;
+    padding: 0.6rem 1.8rem;
+    border-radius: 25px; 
+    transition: all 0.3s ease; 
 }
 
 .btn-secondary:hover {
-    color: #FFFFFF;
-    background-color: #C25100;
+    color: #fff;
+    background: #C25100;
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 12px rgba(194, 81, 0, 0.2);
+}
+
+
+.top-menu {
+    color: #ffffff !important;
+    font-size: 1.8rem;
+    margin-right: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.top-menu:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+.post {
+    margin-bottom: 3rem;
+
+    background: #ffffff;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.post h2 a {
+    color: #3498db !important; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    display: block;
+    margin-bottom: -1.2rem;
+}
+
+.post h2 a:hover {
+    color: #2980b9 !important;
+}
+
+.post > .date {
+    margin: 1.8rem 0 -1rem;
+    display: block;
+    clear: both;
+}
+
+
+.post > .actions {
+    float: right;
+    margin: 2.5rem 0 1.5rem 75rem;
+    position: absolute;
+    z-index: 1;
+}
+
+
+.post {
+    position: relative; 
+    background: #fff;
+    padding: 0 1rem 2rem;
+    overflow: hidden; 
+}
+
+
+.post::after {
+    content: "";
+    position: absolute;
+    bottom: -20px; 
+    right: -20px; 
+    width: 80px;
+    height: 80px;
+    opacity: 0.15; 
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%234d66b6" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0; 
+    transform: rotate(-15deg); 
+}
+
+
+.post p {
+    position: relative;
+    z-index: 1; 
+}
+
+
+
+@media (max-width: 768px) {
+    .page-header {
+        padding: 1.5rem 2rem;
+    }
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    .post {
+        padding: 1rem;
+    }
+
+    .post > .actions {
+        margin-top: -1.8rem;
+        margin-left: 0.5rem;
+    }
+
+    .post p {
+        margin-bottom: 2rem;
+    }
 }
